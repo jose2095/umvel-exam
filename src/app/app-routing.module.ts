@@ -5,7 +5,7 @@ import { AuthComponent } from './pages/auth/auth.component';
 const routes: Routes = [
   {
     path: 'login',
-    component:AuthComponent
+    loadChildren: () => import('./pages/auth/auth.module').then(m => m.AuthModule)
   },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
