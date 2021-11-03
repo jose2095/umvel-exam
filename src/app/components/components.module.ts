@@ -6,16 +6,21 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 
 //material imports
 import {MatTableModule} from '@angular/material/table';
-
+import { UserBannerComponent } from './user-banner/user-banner.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
     TableDataComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    UserBannerComponent
   ],
   imports: [
     CommonModule,
-    MatTableModule
+    MatTableModule,
+    MatToolbarModule,
+    MatTabsModule
   ],
   exports:[
     TableDataComponent,

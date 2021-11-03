@@ -1,3 +1,6 @@
-<h1>User detail</h1>
+<app-user-banner [user]="currentUser"></app-user-banner>
 
-{{currentUser | json}}
+<mat-tab-group mat-align-tabs="start">
+    <mat-tab label="Posts">Posts</mat-tab>
+    <mat-tab label="Edit profile">Edit profile</mat-tab>
+  </mat-tab-group>
