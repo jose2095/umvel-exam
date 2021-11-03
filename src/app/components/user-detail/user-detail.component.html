@@ -1,4 +1,7 @@
 <app-user-banner style="position: sticky; top: 0;" [user]="currentUser"></app-user-banner>
+<div class="button-close">
+<ng-content select='[close-button]'></ng-content>
+</div>
 
 <mat-tab-group mat-align-tabs="start">
     <mat-tab label="Posts">

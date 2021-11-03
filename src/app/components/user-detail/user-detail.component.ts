@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSidenav } from '@angular/material/sidenav';
 import { ERROR_MESSAGE, SUCCESS_MESSAGE } from 'src/app/shared/constants';
 import { Post } from 'src/app/shared/models/post.model';
 import { User } from 'src/app/shared/models/users.model';

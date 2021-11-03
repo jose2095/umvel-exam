@@ -1,6 +1,8 @@
 <mat-drawer-container class="drawer-container">
     <mat-drawer #sideNav mode="over" position="end">
-      <app-user-detail [posts]='currentPosts' [user]="currentUser"></app-user-detail>
+      <app-user-detail [posts]='currentPosts' [user]="currentUser">
+        <button close-button mat-button (click)="sideNav.close()"><mat-icon>close</mat-icon> close</button>
+      </app-user-detail>
     </mat-drawer>
     <mat-drawer-content>
       <mat-toolbar>
