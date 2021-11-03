@@ -1,6 +1,11 @@
-<app-user-banner [user]="currentUser"></app-user-banner>
+<app-user-banner style="position: sticky; top: 0;" [user]="currentUser"></app-user-banner>
 
 <mat-tab-group mat-align-tabs="start">
-    <mat-tab label="Posts">Posts</mat-tab>
+    <mat-tab label="Posts">
+         <div class="post-container">
+           <app-post style="margin-bottom: 10px;" [post]='post' *ngFor="let post of currentPosts"></app-post>
+         </div>
+
+    </mat-tab>
     <mat-tab label="Edit profile">Edit profile</mat-tab>
   </mat-tab-group>

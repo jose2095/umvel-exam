@@ -25,6 +25,8 @@ export class TableDataComponent implements OnInit {
     .subscribe(response=>{
       this.response=response;
       this.data=response.data;
+    },err=>{
+      alert('Error')
     })
   }
 

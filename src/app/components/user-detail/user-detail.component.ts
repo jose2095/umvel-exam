@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Post } from 'src/app/shared/models/post.model';
 import { User } from 'src/app/shared/models/users.model';
 
 @Component({
@@ -9,11 +10,14 @@ import { User } from 'src/app/shared/models/users.model';
 export class UserDetailComponent implements OnInit {
   @Input()
   get user():User {return this.currentUser}
-  set user(user:User){this.currentUser = user}
+  set user(user:User){this.currentUser = user};
 
-  currentUser!:User; 
+  @Input() 
+  get posts():Array<Post>{return this.currentPosts}
+  set posts(posts:Array<Post>){this.currentPosts=posts};
 
-
+  currentUser!:User;
+  currentPosts!:Array<Post>
   constructor() { }
 
   ngOnInit(): void {

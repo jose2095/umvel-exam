@@ -9,18 +9,24 @@ import {MatTableModule} from '@angular/material/table';
 import { UserBannerComponent } from './user-banner/user-banner.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTabsModule} from '@angular/material/tabs';
+import { PostComponent } from './post/post.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
     TableDataComponent,
     UserDetailComponent,
-    UserBannerComponent
+    UserBannerComponent,
+    PostComponent
   ],
   imports: [
     CommonModule,
     MatTableModule,
     MatToolbarModule,
-    MatTabsModule
+    MatTabsModule,
+    MatCardModule,
+    MatButtonModule
   ],
   exports:[
     TableDataComponent,
