@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  authApi:'https://reqres.in/api/',
+  userApi:'https://reqres.in/api/',
   production: false
 };
 

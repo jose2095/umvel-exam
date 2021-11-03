@@ -11,7 +11,7 @@ import { LoginResponse, userAccount } from '../models/auth.model';
 })
 export class AuthService {
 
-  private endpoint:string = environment.authApi+'login';
+  private endpoint:string = environment.userApi+'login';
   public token:BehaviorSubject<string|null>;
   
   constructor(private http:HttpClient,private router:Router) {
