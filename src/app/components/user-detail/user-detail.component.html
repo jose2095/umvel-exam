@@ -12,6 +12,10 @@
            [post]='post' 
            *ngFor="let post of currentPosts; let i =index"
            ></app-post>
+
+           <h2 *ngIf="currentPosts?.length==0">
+            No posts found
+           </h2>
          </div>
 
     </mat-tab>

@@ -30,8 +30,30 @@ export class TableDataComponent implements OnInit {
     })
   }
 
+  /**
+   * open user information
+   * @param user 
+   */
   openDetails(user:User){
     this.showDetails.emit(user.id);
+  }
+
+  /**
+   * get next page data
+   */
+  next(){
+    if(this.response.page<this.response.total_pages){
+      this.getUsers(this.response.page+1);
+    }
+  }
+
+  /**
+   * get previous page data
+   */
+  previous(){
+    if(this.response.page>0){
+      this.getUsers(this.response.page-1);
+    }
   }
 
 }

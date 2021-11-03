@@ -24,6 +24,18 @@
         <tr mat-header-row *matHeaderRowDef="headers"></tr>
         <tr mat-row (click)="openDetails(row)" *matRowDef="let row; columns: headers;"></tr>
       </table>
-      
-      
+</div>
+
+<div style="display: flex; justify-content: center; margin-top: 20px;">
+    <button (click)="previous()" mat-button color="primary">
+      <mat-icon>arrow_back_ios</mat-icon>
+      Prev
+    </button>
+    <button disabled mat-button color="primary" color="primary">
+      {{response?.page}}
+    </button>
+
+    <button (click)="next()"  mat-button color="primary" color="primary">
+      Next<mat-icon>arrow_forward_ios</mat-icon>
+    </button>
 </div>

@@ -3,6 +3,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { forkJoin } from 'rxjs';
 import { Post } from 'src/app/shared/models/post.model';
 import { User } from 'src/app/shared/models/users.model';
+import { AuthService } from 'src/app/shared/services/auth.service';
 import { PostsService } from 'src/app/shared/services/posts.service';
 import { UsersService } from 'src/app/shared/services/users.service';
 
@@ -19,6 +20,7 @@ export class UsersComponent implements OnInit {
 
   constructor(
     private userService:UsersService,
+    public authService:AuthService,
     private postService:PostsService) { }
 
   ngOnInit(): void {
