@@ -1,0 +1,39 @@
+.drawer-container{
+    height: 100vh;
+
+    mat-drawer{
+        width: 500px;
+        background-color: #F6F6F6;
+    }
+}
+
+@media screen and(max-width:600px){
+    .drawer-container{ 
+        mat-drawer{
+            width: 100%;
+        }
+    }
+}
+
+.table-data-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    app-table-data{
+        margin-top: 20px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:600px){
+    app-table-data{
+        width: 400px !important;
+        overflow: auto !important;
+    }
+}
+
+mat-toolbar{
+    background-color: #414345;
+    justify-content: space-between;
+    color: white;
+}

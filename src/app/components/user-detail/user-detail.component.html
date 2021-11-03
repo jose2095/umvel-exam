@@ -1,0 +1,53 @@
+<app-user-banner style="position: sticky; top: 0;" [user]="currentUser"></app-user-banner>
+<div class="button-close">
+<ng-content select='[close-button]'></ng-content>
+</div>
+
+<mat-tab-group mat-align-tabs="start">
+    <mat-tab label="Posts">
+         <div class="post-container">
+           <app-post 
+           (delete)="handdleDelete($event,i)"
+           style="margin-bottom: 10px;" 
+           [post]='post' 
+           *ngFor="let post of currentPosts; let i =index"
+           ></app-post>
+
+           <h2 *ngIf="currentPosts?.length==0">
+            No posts found
+           </h2>
+         </div>
+
+    </mat-tab>
+    <mat-tab label="Edit profile">
+      <div class="form-container">
+        <form (ngSubmit)="onSubmit()" [formGroup]='userForm'>
+          <mat-form-field appearance="legacy" class="form-element">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" formControlName="email">
+            <mat-error *ngIf="utilsService.getControl(userForm,'email')?.invalid && utilsService.getControl(userForm,'email')?.touched">
+                <span *ngIf="utilsService.getControl(userForm,'email')?.hasError('required')">Required field</span>
+                <span *ngIf="utilsService.getControl(userForm,'email')?.hasError('email')">invalid format</span>
+            </mat-error>
+        </mat-form-field>
+      
+        <mat-form-field appearance="legacy" class="form-element">
+          <mat-label>First name</mat-label>
+          <input matInput placeholder="First name" formControlName="firstName">
+          <mat-error *ngIf="utilsService.getControl(userForm,'firstName')?.invalid && utilsService.getControl(userForm,'firstName')?.touched">
+              <span *ngIf="utilsService.getControl(userForm,'firstName')?.hasError('required')">Required field</span>
+          </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy" class="form-element">
+        <mat-label>Last name</mat-label>
+        <input matInput placeholder="Last name" formControlName="lastName">
+        <mat-error *ngIf="utilsService.getControl(userForm,'lastName')?.invalid && utilsService.getControl(userForm,'lastName')?.touched">
+            <span *ngIf="utilsService.getControl(userForm,'lastName')?.hasError('required')">Required field</span>
+        </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit" [disabled]="userForm.invalid">Save</button>
+        </form>
+      </div>
+    </mat-tab>
+  </mat-tab-group>

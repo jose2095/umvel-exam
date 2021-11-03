@@ -1,0 +1,20 @@
+<mat-drawer-container class="drawer-container">
+    <mat-drawer #sideNav mode="over" position="end">
+      <app-user-detail [posts]='currentPosts' [user]="currentUser">
+        <button close-button mat-button (click)="sideNav.close()"><mat-icon>close</mat-icon> close</button>
+      </app-user-detail>
+    </mat-drawer>
+    <mat-drawer-content>
+      <mat-toolbar>
+       <span>Users</span>
+       <span ></span>
+       <button (click)="authService.logOut()" mat-icon-button >
+        <mat-icon>logout</mat-icon>
+      </button>
+     </mat-toolbar>
+      <div class="table-data-container">
+          <app-table-data (showDetails)="handdleUser($event)"></app-table-data>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+  

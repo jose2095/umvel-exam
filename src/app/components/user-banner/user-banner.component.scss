@@ -1,0 +1,15 @@
+.general-info{
+    display: flex;
+    background-color: #FAFAFA;
+    padding: 20px;
+    align-items: center;
+    img{
+        border-radius: 50%;
+    }
+}
+
+.info-container{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
