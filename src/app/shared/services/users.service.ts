@@ -20,4 +20,8 @@ export class UsersService {
   getUserDetail(id:number):Observable<{data:User}>{
     return this.http.get<{data:User}>(this.url+`users/${id}`);
   }
+
+  editUser(user:any):Observable<User>{
+    return this.http.patch<User>(`${this.url}users/${user.id}`,{user})
+  }
 }

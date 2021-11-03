@@ -7,15 +7,15 @@
                     <mat-form-field appearance="legacy" class="form-element">
                         <mat-label>Email</mat-label>
                         <input matInput placeholder="Email" formControlName="email">
-                        <mat-error *ngIf="getControl('email')?.invalid && getControl('email')?.touched">
-                            <span *ngIf="getControl('email')?.hasError('required')">Required field</span>
-                            <span *ngIf="getControl('email')?.hasError('email')">invalid format</span>
+                        <mat-error *ngIf="utilsService.getControl(loginForm,'email')?.invalid && utilsService.getControl(loginForm,'email')?.touched">
+                            <span *ngIf="utilsService.getControl(loginForm,'email')?.hasError('required')">Required field</span>
+                            <span *ngIf="utilsService.getControl(loginForm,'email')?.hasError('email')">invalid format</span>
                         </mat-error>
                     </mat-form-field>
                     <mat-form-field appearance="legacy" class="form-element">
                         <mat-label>Password</mat-label>
                         <input matInput type="password" placeholder="Password" formControlName="password">
-                        <mat-error *ngIf="getControl('password')?.invalid && getControl('password')?.touched">
+                        <mat-error *ngIf="utilsService.getControl(loginForm,'password')?.invalid && utilsService.getControl(loginForm,'password')?.touched">
                             Required field
                         </mat-error>
                     </mat-form-field>

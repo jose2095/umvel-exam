@@ -3,6 +3,7 @@ import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from
 import { Router } from '@angular/router';
 import { ERROR_MESSAGE } from 'src/app/shared/constants';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { UtilService } from 'src/app/shared/utils/util.service';
 
 @Component({
   selector: 'app-auth',
@@ -13,7 +14,10 @@ export class AuthComponent {
   public loading=false;
 
   public loginForm:FormGroup;
-  constructor(private authService:AuthService,private router:Router) {
+  constructor(
+    private authService:AuthService,
+    private router:Router,
+    public utilsService:UtilService) {
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.email, Validators.required]),
       password: new FormControl('', [Validators.required]),
@@ -33,10 +37,5 @@ export class AuthComponent {
         })
   }
 
-
-
-  public getControl(controlName:string):AbstractControl | null{
-    return this.loginForm.get(controlName);
-  }
 
 }
