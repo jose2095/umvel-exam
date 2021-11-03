@@ -3,7 +3,12 @@
 <mat-tab-group mat-align-tabs="start">
     <mat-tab label="Posts">
          <div class="post-container">
-           <app-post style="margin-bottom: 10px;" [post]='post' *ngFor="let post of currentPosts"></app-post>
+           <app-post 
+           (delete)="handdleDelete($event,i)"
+           style="margin-bottom: 10px;" 
+           [post]='post' 
+           *ngFor="let post of currentPosts; let i =index"
+           ></app-post>
          </div>
 
     </mat-tab>
