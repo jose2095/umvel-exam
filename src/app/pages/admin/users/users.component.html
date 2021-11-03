@@ -3,7 +3,14 @@
       <app-user-detail [posts]='currentPosts' [user]="currentUser"></app-user-detail>
     </mat-drawer>
     <mat-drawer-content>
-      <div>
+      <mat-toolbar>
+       <span>Users</span>
+       <span ></span>
+       <button mat-icon-button >
+        <mat-icon>logout</mat-icon>
+      </button>
+     </mat-toolbar>
+      <div class="table-data-container">
           <app-table-data (showDetails)="handdleUser($event)"></app-table-data>
       </div>
     </mat-drawer-content>

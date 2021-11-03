@@ -6,3 +6,19 @@
         background-color: #F6F6F6;
     }
 }
+
+.table-data-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    app-table-data{
+        margin-top: 20px;
+        width: 100%;
+    }
+}
+
+mat-toolbar{
+    background-color: #414345;
+    justify-content: space-between;
+    color: white;
+}
