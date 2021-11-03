@@ -1,1 +1,11 @@
-<p>users works!</p>
+<mat-drawer-container class="drawer-container">
+    <mat-drawer #sideNav mode="over" position="end">
+      <app-user-detail [user]="currentUser"></app-user-detail>
+    </mat-drawer>
+    <mat-drawer-content>
+      <div>
+          <app-table-data (showDetails)="handdleUser($event)"></app-table-data>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+  
